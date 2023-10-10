@@ -1,0 +1,12 @@
+.remove {
+    background-color: rgb(223, 80, 80);
+}
+
+.card.health-card{
+    display: inline-block;
+    gap: 10rem;
+    margin-right: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

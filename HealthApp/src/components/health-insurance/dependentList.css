@@ -1,0 +1,11 @@
+.add {
+    
+    background-color: hsl(256, 26%, 20%);
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    text-decoration: none;
+    
+    align-self: flex-end;
+}

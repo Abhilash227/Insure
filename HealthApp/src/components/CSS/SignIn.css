@@ -1,0 +1,43 @@
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:palevioletred;
+    font-size: 25px;
+   margin-bottom: 20px;
+  }
+
+  .button-container{
+    
+  border: 40px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 4px;
+  cursor: pointer;
+  border-radius: 5px; 
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }
+
+  .sign-in-page{
+    background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 50%;
+  }
+
+  .sign-up-page{
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 50%;
+  }

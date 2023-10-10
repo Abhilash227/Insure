@@ -1,0 +1,79 @@
+.card {
+
+    border: 1px solid #ecbcbc;
+
+    padding: 10px;
+
+    margin: 10px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    background-color: #fff;
+
+}
+
+ 
+
+.content{
+
+    text-align: left;
+
+   
+
+}
+
+ 
+
+.text-links{
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    margin-bottom: 20px;
+
+}
+
+ 
+
+span{
+
+    cursor: pointer;
+
+    margin-right: 5px;
+
+   
+
+}
+
+ 
+
+.active{
+
+    color: blue;
+
+}
+
+ 
+
+.content.overview{
+
+    background-color: antiquewhite;
+
+}
+
+ 
+
+.content.benefits{
+
+    background-color: lightcyan;
+
+}
+
+ 
+
+.content.faq{
+
+    background-color:antiquewhite;
+
+}
