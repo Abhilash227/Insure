@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
 });
 
 const otp = generateOTP();
-const generatingOTP = () =>{
+const generatingOTP = () => {
   return otp;
 }
 
@@ -36,4 +36,4 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
     }
   });
 });
-module.exports = { sendEmail,generatingOTP };
+module.exports = { sendEmail, generatingOTP };
