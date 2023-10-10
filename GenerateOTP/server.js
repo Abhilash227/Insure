@@ -18,7 +18,7 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 };
- 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,23 +32,21 @@ const otp = generatingOTP();
 app.use("/email", emailRoutes);
 
 app.put("/setOtp/:email", (req, res) => {
-  // const body = req.body;
-  const email=req.params.email;
-  const flag=req.params.flag;
+  const email = req.params.email;
+  const flag = req.params.flag;
   const query1 = `Update UserTable01 set OTP=${otp} where Email='${email}'`;
   console.log(otp);
   console.log(query1);
-  // console.log(query1);
   sql.query(conString, query1, (err, rows) => {
-      if (err) {
-          res.status(400).send(err.message);
-      }
-      else {
-          res.status(200).send("User updated successfully");
-      }
+    if (err) {
+      res.status(400).send(err.message);
+    }
+    else {
+      res.status(200).send("User updated successfully");
+    }
   })
 })
- 
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
