@@ -13,16 +13,12 @@ const Header = () => {
   useEffect(() => {
     async function getData() {
         const res = await InsuranceService.getUserByFlag();
-        // console.log(res.data[0].Flag);
-        // console.log(res.data.length);
         if(res.data.length>0)
         {
-
           if(res.data[0].Flag==3)
           {
               temp=false;
               setUser(false);
-              // console.log(temp);
           }
         }
     }
@@ -43,18 +39,12 @@ const Header = () => {
 
   const handleSignOut = () => {
     // Sign the user out
-    // let x=temp;
-    // alert(!x);
-    // temp=!x;
     InsuranceService.setFlagZero();
   };
-
-
   const handleClick = e => {
     e.preventDefault();
     setOpen(!open);
   };
-//alert(user);
 if(user)
 {
   return(
@@ -71,22 +61,7 @@ if(user)
                 <Link to="/SignInPage">
                 <button onClick={handleSignIn} >Sign In</button>
                 </Link>
-                {/* <Link to="/">
-                <button onClick={handleSignOut} >SignOut</button>
-                </Link> */}
-
               </li>
-            {/* <li className="btn btn--nav-btn">
-              <Link to="/SignUpPage">
-                Register
-              </Link>
-            </li> */}
-
-            {/* <li className="btn btn--nav-btn">
-              <Link to="SignInPage">
-                Sign In
-              </Link>
-            </li> */}
           </ul>
           <div className="hamburger">
             <img src={images.hamburger} alt="" onClick={handleClick} />
@@ -107,29 +82,13 @@ else{
           </div>
           <ul className={open ? `nav-items active` : `nav-items`}>
               <li className="btn btn--nav-btn">
-                
-                {/* <Link to="/SignInPage">
-                <button onClick={handleSignIn} >Sign In</button>
-                </Link> */}
                 <Link to="/">
                 <button className="signoutbtn" onClick={handleSignOut}>SignOut</button>
                 </Link>
-
               </li>
               <li>
                 <a href="#" style={{textDecoration:'none', fontSize:'20px', color:'hsl(256, 26%, 20%)'}}>{userName}</a>
               </li>
-            {/* <li className="btn btn--nav-btn">
-              <Link to="/SignUpPage">
-                Register
-              </Link>
-            </li>
-
-            <li className="btn btn--nav-btn">
-              <Link to="SignInPage">
-                Sign In
-              </Link>
-            </li> */}
           </ul>
           <div className="hamburger">
             <img src={images.hamburger} alt="" onClick={handleClick} />

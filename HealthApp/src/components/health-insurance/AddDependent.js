@@ -13,11 +13,8 @@ export default function AddDependent() {
             "Relationship": ""
         }
     });
-
-
     let { dependent } = state;
     let navigate = useNavigate();
-
     function updateInput(ev) {
         debugger;
         setState({
@@ -26,8 +23,6 @@ export default function AddDependent() {
             }
         })
     }
-
-
     const [userState, setUser] = useState({
         users: []
     })
@@ -44,18 +39,13 @@ export default function AddDependent() {
     let { users } = userState;
 
     async function onSubmit(ev) {
-
-        // alert("Hello")
         users.map((e) => {
             if (e.Flag == 3) {
                 dependent.UserId = e.UserId;
             }
         })
-        // alert("Hello");
         ev.preventDefault();
         const res=await InsuranceService.getDependentsCount();
-        // alert(res.data[0].Column0);
-        // console.log(res.data);
         if(res.data[0].Column0<4)
         {
             InsuranceService.addDependent(dependent).then((res) => {
@@ -71,8 +61,6 @@ export default function AddDependent() {
     return (
         <>
             <div className='add-dependent'>
-                {/* <h1>{userData}</h1>
-             <pre>{JSON.stringify(dependent)}</pre> */}
                 <h1 className="title">Add new Dependent</h1>
                 <br/>
                 
@@ -91,22 +79,8 @@ export default function AddDependent() {
                     </label>
                     </div>
                     <br/>
-                    {/* <p>
-                            Enter the User:
-                            <input  onChange={updateInput} type='number' name='UserId' value={dependent.UserId} className='form-control'/>
-                        </p>  */}
                     <div className="input-container">
                     <label>
-                        {/* Select the Relationship:
-                        <select onChange={updateInput} name='Relationship' className='form-control' value={dependent.Relationship} required>
-                            <option>Select the dependent</option>
-                            <option value="Father">Father</option>
-                            <option value="Mother">Mother</option>
-                            <option value="FatherInLaw">Father In Law</option>
-                            <option value="MotherInLaw">Mother In Law</option>
-                            <option value="Son">Son</option>
-                            <option value="Daughter">Daughter</option>
-                        </select> */}
                         Enter the Relationship:
                         <input onChange={updateInput} type='text' name='Relationship' value={dependent.Relationship} className='form-control' required />
                     </label>

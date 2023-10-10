@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./newhealth.scss";
 import { InsuranceService } from "../../Services/InsuranceService";
 
@@ -7,33 +7,28 @@ const NewHealth = () => {
     const [plan, setPlan] = useState("");
     const [discount, setDiscount] = useState(0);
     const [Upremium, setUPremium] = useState(0);
-    const [Onepremium,setOnePremium]=useState(0);
-    const [Twopremium,setTwoPremium]=useState(0);
-    const [Threepremium,setThreePremium]=useState(0);
+    const [Onepremium, setOnePremium] = useState(0);
+    const [Twopremium, setTwoPremium] = useState(0);
+    const [Threepremium, setThreePremium] = useState(0);
     const [state, setstate] = useState({
         users: []
     })
     const [pack, setPack] = useState("")
     const [premium, setPremium] = useState(0);
-    const [count,setCount]=useState(0);
+    const [count, setCount] = useState(0);
 
-
-
-    
     useEffect(() => {
         async function getData() {
-          const res = await InsuranceService.getUserPremium();
-        //   console.log();
-          let pre=res.data[0].HealthPremium;
-          setUPremium(pre);
-          setOnePremium(pre-pre*0.05);
-          setTwoPremium((pre-pre*0.075)*2);
-          setThreePremium((pre-pre*0.1)*3);
+            const res = await InsuranceService.getUserPremium();
+            let pre = res.data[0].HealthPremium;
+            setUPremium(pre);
+            setOnePremium(pre - pre * 0.05);
+            setTwoPremium((pre - pre * 0.075) * 2);
+            setThreePremium((pre - pre * 0.1) * 3);
 
         } async function getUserData() {
             const res = await InsuranceService.getUserId(3);
-            if(res.data.length>0)
-            {
+            if (res.data.length > 0) {
                 setCount(1);
                 setstate({
                     ...state, users: res.data
@@ -42,13 +37,12 @@ const NewHealth = () => {
         }
         async function getPack() {
             const res = await InsuranceService.getPackageLevel();
-            // alert(res.data[0].UserName);
             setPack(res.data[0].PackageLevel);
         }
         getData();
         getPack();
         getUserData();
-      }, []);
+    }, []);
 
 
     const plans = [
@@ -64,7 +58,7 @@ const NewHealth = () => {
         },
         {
             name: "1 Year Plan",
-            discount:5,
+            discount: 5,
             premium: Onepremium,
         },
     ];
@@ -73,35 +67,16 @@ const NewHealth = () => {
         setShowPopup(true);
     };
 
-    function onSubmit()
-    {
+    function onSubmit() {
         console.log(Upremium);
     }
 
     const handlePlanSelect = (plan) => {
-        let totalAmount=0;
-        let discAmount=0;
+        let totalAmount = 0;
+        let discAmount = 0;
         setPlan(plan.name);
         setDiscount(plan.discount);
         setPremium(plan.premium);
-        // console.log(plan.premium);
-        // if(plan.discount==5)
-        // {
-        //     totalAmount=premium-premium*0.05;
-        //     setDPremium(totalAmount);
-        // }
-        // else if(plan.discount==7.5)
-        // {
-        //     totalAmount=premium-premium*0.075;
-        //     setDPremium(totalAmount);
-
-        // }
-        // else if(plan.discount==10)
-        // {
-        //     totalAmount=premium-premium*0.1;
-        //     setDPremium(totalAmount);
-
-        // }
     };
 
     return (

@@ -19,48 +19,16 @@ import './dependentLists.css'
         getData();
       }, []);
       let { users } = state;
-    
       const calculatePremium = () => {
-    
         const basePremium = 5000;
-    
         let temp = 0;
-    
         users.forEach((e) => {
-    
           const agePremium = e.DependentAge * 100;
-    
           const totalPremium = basePremium + agePremium;
-    
           temp = temp + totalPremium
-    
-          // alert(temp);
-    
-          // alert(temp);
-    
         })
-    
         setPremium(temp);
-    
-        // alert(premium);
-    
-        // alert(tPremium);
-    
       };
-    
-      // useEffect(()=>{
-      //   async function getData(){
-      //     const res=await InsuranceService.getAllDependents();
-      //     setstate({  
-      //       ...state,users:res.data
-      //     })
-      //   }
-      //   getData();  
-      // },[]);
-      // let {users}=state;
-    
-    
-      // alert(employees[0].Name);
   return (
     <>
     <div>
@@ -90,7 +58,6 @@ import './dependentLists.css'
       </div>
 
       <div>
-        {/* <a href='' style={{textDecoration:'none',color:'gold'}}><h2 style={{marginLeft:'35px',fontSize:'30px'}}>Gold</h2></a> */}
         <div className='card' style={{display:'inline-block', width:'330px', margin:'20px 35px',padding:'20px'}}>
             <div style={{minHeight:'300px'}}>
                 <img src={images.featuregold1} style={{marginBottom:'20px',maxHeight:'200px'}}></img>
@@ -115,7 +82,6 @@ import './dependentLists.css'
       </div>
        
       <div>
-        {/* <a href='' style={{textDecoration:'none',color:'grey'}}><h2 style={{marginLeft:'35px',fontSize:'30px'}}>Platinum</h2></a> */}
         <div className='card' style={{display:'inline-block', width:'330px', margin:'20px 35px',padding:'20px'}}>
             <div style={{minHeight:'300px'}}>
                 <img src={images.featureplatinum1} style={{marginBottom:'20px',maxHeight:'200px'}}></img>

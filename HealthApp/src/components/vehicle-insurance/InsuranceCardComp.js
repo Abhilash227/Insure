@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './insurancecard.scss';
 
 
-const InsuranceCard = ({ type, description, linkTo , image}) => {
+const InsuranceCard = ({ type, description, linkTo, image }) => {
   return (
     <Link underline='none' to={linkTo} className="card insurance-card">
       <div className="card-body">

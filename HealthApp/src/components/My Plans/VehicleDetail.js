@@ -9,9 +9,6 @@ export default function VehicleDetail(props) {
                 <p>Id: {props.user.RegistrationNumber}</p>
                 <p>Name: {props.user.Model}</p>
                 <p>Model: {props.user.Type}</p>
-                {/* <p>Age: {props.user.DependentAge}</p> */}
-                {/* <p>{props.user.Relationship}</p> */}
-                {/* <p>{props.user.Age}</p> */}
                 <button className='btn btn-danger'>Remove</button>
             </div>
         </div>

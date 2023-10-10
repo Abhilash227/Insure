@@ -16,7 +16,7 @@ const AllPackages = () => {
           { coverage: 'Hospitalization Expenses', details: 'Up to Rs.50,00,000 coverage per year. Includes room charges, ICU, and surgery costs.' }
         ]}
       />
-      <hr/>
+      <hr />
       <PlanSection
         name="Gold Plan"
         price="$100/month"
@@ -26,8 +26,8 @@ const AllPackages = () => {
           { coverage: 'Maternity Care', details: 'Coverage for pregnancy and childbirth, including prenatal and postnatal care.' },
           { coverage: 'Prescription Drugs', details: 'Medication coverage with low copays for generic and brand-name drugs.' }
         ]}
-        />
-        <hr/>
+      />
+      <hr />
       <PlanSection
         name="Platinum Plan"
         price="$150/month"
@@ -38,9 +38,8 @@ const AllPackages = () => {
           { coverage: 'Global Health Coverage', details: 'Health coverage even when traveling abroad, covering medical emergencies and routine care.' },
           { coverage: 'Specialized Treatments', details: 'Coverage for specialized medical treatments, such as cancer therapies and organ transplants' }
         ]}
-        />
-        <hr/>
-
+      />
+      <hr />
     </div>
   );
 };

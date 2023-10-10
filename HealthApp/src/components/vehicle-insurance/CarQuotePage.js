@@ -20,9 +20,6 @@ const CarQuotePage = () => {
 const navigate=useNavigate();
 const [error,setError]=useState("");
 
-// let {vehicle}=state;
-// let navigate=useNavigate();
-
 function updateInput(ev){
     debugger;
     setState({
@@ -64,7 +61,6 @@ let {vehicle}=state;
 
 function onSubmit(ev){
   let flag=0;
-  //  console.log(vehicleState);
     vehicleState.vehicles.map((e)=>{
       console.log(e.RegistrationNumber);
       if(e.RegistrationNumber==vehicle.RegistrationNumber)
@@ -72,7 +68,6 @@ function onSubmit(ev){
         flag=1;
       }
     })
-    // alert("Hello")
     users.map((e)=>{
         if(e.Flag==3)
         {
@@ -83,15 +78,12 @@ function onSubmit(ev){
      if(flag==0)
      {
       InsuranceService.addVehicle(vehicle).then((res)=>{
-        // alert("Vehicle added successfully");
         navigate('/car-premium');
     })
      }
      else{
         setError("Vehicle with the Registration number already exists");
      }
-   
-    // alert(vehicle.RegistrationNumber);
   }
 
   return (
@@ -111,23 +103,6 @@ function onSubmit(ev){
         </label>
         <span style={{color: 'red'}}>{error}</span>
         <hr />
-
-        {/* <label>
-          Vehicle Type:
-          <select
-            name="vehicleType"
-            value={formData.vehicleType}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="hatchback">Hatchback</option>
-            <option value="sedan">Sedan</option>
-            <option value="suv">SUV</option>
-            <option value="muv">MUV</option>
-          </select>
-        </label>
-        <br /> */}
-
         <label>
           Vehicle Model Name:
           <input
@@ -139,31 +114,6 @@ function onSubmit(ev){
           />
         </label>
         <hr />
-
-        {/* <label>
-          Purchase Date:
-          <input
-            type="date"
-            name="purchaseDate"
-            value={formData.purchaseDate}
-            onChange={handleInputChange}
-            required
-          />
-        </label>
-        <br /> */}
-
-        {/* <label>
-          Owner Contact Number:
-          <input
-            type="tel"
-            name="ownerContactNumber"
-            pattern="\d*"
-            maxLength="10"
-            value={formData.ownerContactNumber}
-            onChange={handleInputChange}
-            required
-          />
-        </label> */}
         <hr />
         <button style={{backgroundColor:"white" , color:"hsl(256, 26%, 20%)"}} type="submit"><b>Get Car Quote</b></button>
         <hr/>

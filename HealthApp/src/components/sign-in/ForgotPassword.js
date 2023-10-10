@@ -1,43 +1,40 @@
-import React, { useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signInPage.scss";
 import { images } from "../../images";
 import { InsuranceService } from "../../Services/InsuranceService";
 
 
-const ForgotPassword=()=>{
-  let navigate=useNavigate();
-const [state,setState]=useState({
-  user:{
-    "Password":"",
-    "Retype":""
-  }
-})
-const [errorMessage,setErrorMessage]=useState("");
-
-function updateInput(ev)
-{
-  setState({
-    ...state,user:{
-        ...state.user,[ev.target.name]:ev.target.value
+const ForgotPassword = () => {
+  let navigate = useNavigate();
+  const [state, setState] = useState({
+    user: {
+      "Password": "",
+      "Retype": ""
     }
-})
-}
+  })
+  const [errorMessage, setErrorMessage] = useState("");
 
-function onSubmit()
-{
-  if(user.Password!=user.Retype)
-  {
-    setErrorMessage('Passwords does not match');
+  function updateInput(ev) {
+    setState({
+      ...state, user: {
+        ...state.user, [ev.target.name]: ev.target.value
+      }
+    })
   }
-  else{
-    InsuranceService.updatePassword(user.Password);
-    InsuranceService.updateFlagOnRetype();
-    navigate('/SignInPage');
-    
+
+  function onSubmit() {
+    if (user.Password != user.Retype) {
+      setErrorMessage('Passwords does not match');
+    }
+    else {
+      InsuranceService.updatePassword(user.Password);
+      InsuranceService.updateFlagOnRetype();
+      navigate('/SignInPage');
+
+    }
   }
-}
-let {user}=state;
+  let { user } = state;
   return (
     <div className="sign-in-page">
       <h1 className="title"> Sign In</h1>
@@ -52,7 +49,7 @@ let {user}=state;
             onChange={updateInput}
             required
           />
-           <label htmlFor="email">Confirm the password</label>
+          <label htmlFor="email">Confirm the password</label>
           <input
             type="password"
             id="retype"
@@ -62,7 +59,7 @@ let {user}=state;
             required
           />
         </div>
-        <span style={{color: 'red'}}>{errorMessage}</span>
+        <span style={{ color: 'red' }}>{errorMessage}</span>
         <div className="button-container">
           <button type="btn" onClick={onSubmit}>Reset Password</button>
         </div>

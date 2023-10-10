@@ -1,40 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Import your CSS for styling
 
- // Import your CSS for styling
-
-
-const DetailsModal = ({ isOpen, onClose, details, premium,isBikeCalculator }) => {
-
+const DetailsModal = ({ isOpen, onClose, details, premium, isBikeCalculator }) => {
   if (!isOpen) return null;
-
- 
-
   return (
-
     <div className="modal-overlay">
-
       <div className="modal-content">
-
         <span className="close-btn" onClick={onClose}>&times;</span>
-
         <h2>User Details & Premium</h2>
-        <hr/>
+        <hr />
         <div>
           <p><strong>Year of Purchase: </strong> {details.year}</p>
-          <hr/>
+          <hr />
           <p><strong>Vehicle Value: </strong> Rs.{details.vehicleValue}</p>
-          <hr/>
+          <hr />
           {isBikeCalculator && (
             <p><strong>Bike Premium: </strong><span className='highlight'>Rs.{premium}</span></p>
           )}
-          {isBikeCalculator && details.modelType &&(
+          {isBikeCalculator && details.modelType && (
             <p><strong>Model Type: </strong> {details.modelType}</p>
           )}
-            {!isBikeCalculator && (
+          {!isBikeCalculator && (
             <p><strong>Car Premium: </strong><span className='highlight'>Rs.{premium}</span></p>
           )}
-          <hr/>
+          <hr />
           <Link to="/">
             <button type="submit">Go To Home</button>
           </Link>
@@ -42,11 +32,9 @@ const DetailsModal = ({ isOpen, onClose, details, premium,isBikeCalculator }) =>
       </div>
     </div>
   );
-
 };
 
- 
+
 
 export default DetailsModal;
 
- 

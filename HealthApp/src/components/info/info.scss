@@ -2,8 +2,8 @@
     width: 100%;
     padding: 15rem;
     //padding-top: 10rem;
-    
-    img{
+
+    img {
         max-width: 7.5rem;
     }
 
@@ -13,26 +13,31 @@
         gap: 2rem;
         padding-top: 10rem;
 
-        h3{
+        h3 {
             padding: 1.5rem 0;
             font-weight: 700;
         }
+
         p {
             padding: 0;
         }
-        @media(max-width: 767px){
+
+        @media(max-width: 767px) {
             text-align: center;
             grid-template-columns: repeat(1, 1fr);
-            p{
+
+            p {
                 max-width: 70%;
                 margin: auto;
             }
         }
-       
+
     }
-    @media(max-width: 767px){
+
+    @media(max-width: 767px) {
         padding: 0;
-        .title1{
+
+        .title1 {
             text-align: center;
         }
     }
